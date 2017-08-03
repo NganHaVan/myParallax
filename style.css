@@ -1,0 +1,269 @@
+*{
+  box-sizing: border-box;
+  transition: all ease-in-out 250ms;
+}
+body,html{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: 'Raleway',sans-serif;
+  text-align: center;
+}
+
+/*Header Settings*/
+header{
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  margin: 0;
+  padding-left: 20px;
+}
+#branding{
+  font-family: 'Lobster', cursive;
+  color: #fff;
+  padding-top:15px;
+  font-size: 1.5em;
+}
+/*header #branding{
+  float: left;
+}*/
+header nav a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  /*float: right;*/
+  padding: 10px;
+}
+nav a.active{
+  background-color: #000;
+}
+header nav a:hover{
+  background-color: #000;
+  color: #fff;
+  font-weight: 900;
+}
+header li{
+  display: inline-block;
+  text-transform: uppercase;
+}
+li{
+  list-style-type: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+/*Settings for phone interface */
+.container{
+  width: 95%;
+  max-width: 70em;
+  margin: 0 auto;
+}
+.clearfix::after,footer::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+/*Column System Settings*/
+[class^=col-]{
+  float: left;
+}
+[class^=col-]:first-child{
+  padding-left: 0;
+}
+[class^=col-]:last-child{
+  padding-right: 0;
+}
+.col-3{
+  width:45%;
+}
+.col-1{
+  width: 16.666666667%;
+}
+
+
+/*Home-hero Settings*/
+.home-hero{
+  background-image:  url("pexels-photo-355988.jpeg") ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -ms-background-size:cover;
+  padding: 10em 0;
+  height: 100vh;
+}
+h1{
+  font-weight: 300;
+  font-size: 2rem;
+  margin-top: 0;
+}
+.title{
+  font-size: 36px;
+  font-weight: 900;
+}
+.title span{
+  font-weight: 300;
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  padding: 1.5rem;
+}
+/*Button Settings*/
+.button{
+  border: 2px solid;
+  display: inline-block;
+  padding:.5em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom:3%;
+}
+.button-small{
+  font-size: .6rem;
+}
+.button-access{
+  color: #00ff6c;
+  border-color: #00ff6c;
+}
+.button-dark{
+  color: #000;
+  border-color: #000;
+}
+.button-dark:hover{
+  background-color: #232323;
+  color: #00ff6c;
+}
+.button-access:hover, .button-access:focus{
+  background: #00ff6c;
+  color: #232323;
+}
+@media (min-width:60rem) {
+  .button{
+    font-size: 1.5rem;
+  }
+  .button-small{
+    font-size: .7rem;
+    font-weight: 600;
+  }
+}
+
+/*Settings for media*/
+@media (min-width:60rem) {
+  .title{
+    font-size: 3rem;
+  }
+  #branding{
+    float:left;
+  }
+  header nav {
+    float: right;
+    margin: 1rem;
+  }
+  /*Set the home-hero background fit the browser screen when first time accessing website*/
+  .home-hero{
+    height: 100vh;
+    padding-top: 35vh;
+    margin-bottom: 0;
+  }
+}
+/*home-about Setting*/
+.home-about .text-box{
+  background-color: #232323;
+  padding: 3em;
+  color: #fff;
+  width: 100vw;
+  /*margin-left: -2.5%;*/
+  outline: 2px solid #20ff6c;
+  outline-offset: -2.5em;
+  position: relative;
+}
+.home-about .text-box h1{
+  color: #20ff6c;
+  position: absolute;
+  left: 6rem;/*left will be calculated from the left-side (W) of the text*/
+  transform: translateX(0);
+  top: .5em;
+  background-color:#232323;
+  padding: 0 .25em;
+}
+@media (min-width:60rem) {
+  h1{
+    font-size: 2rem;
+  }
+  .home-about{
+    background-image: url('pexels-photo-505142.jpeg');
+    background-position: center;
+    padding-bottom: 10em;
+    margin-left: 5% ;
+    margin-bottom: 2%;
+  }
+  .home-about .text-box{
+    width: 40%;
+    top: -5em;
+    text-align: left;
+    box-shadow: 10px 10px 3em 0 rgba(0,0,0,.7);
+    left: -2.5%;
+  }
+}
+
+/*Portfolio Setting*/
+.portfolio{
+  margin: 3em 0;
+}
+.port-item{
+  margin: 0;
+  position: relative;/*Must set relative before setting absolute position*/
+}
+.port-descr{
+  position: absolute;
+  z-index:100;
+  bottom: 0;
+  left:0;
+  right: 0;
+  color: #fff;
+  background: rgba(0,0,0,.6);
+  padding-bottom: 3%;
+}
+.port-item img{
+  width: 100vw;
+  height: 50vh;
+  display: block;
+}
+@media (min-width:37rem) {
+  .port-item{
+    width: 50%;
+    float: left;
+  }
+}
+@media (min-width:60rem) {
+  .port-item{
+    width: 33.333334% !important;
+    float: left;
+    overflow: hidden;
+  }
+  .port-descr{
+    transform: translateY(150%);
+  }
+  .port-item:hover .port-descr{
+    transform: translateY(0%);
+  }
+
+}
+
+/*cta Settings*/
+.cta{
+  clear: both;
+  background-color: #00ff6c;
+  padding:2em 0;
+
+}
+
+/*Footer Settings*/
+footer{
+  background-color: #232323;
+  color: #fff;
+  text-align:left;
+}
+
+/*Column System*/
