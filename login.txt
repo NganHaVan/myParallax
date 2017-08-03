@@ -1,0 +1,4 @@
+Hello World
+Please ignore this file. It has nothing to do with my Parallax Project at all. I just have fun with Git and GitHub.
+Thanks for taking a look at my project.
+Have a nice day. 
